@@ -1,0 +1,43 @@
+class Vehicle {
+    String brand;
+    public Vehicle(String brand) {
+        this.brand = brand;
+    }
+    public void display() {
+        System.out.println("Brand: " + brand);
+    }
+}
+
+class Car extends Vehicle {
+    int seats;
+    public Car(String brand, int seats) {
+        super(brand);
+        this.seats = seats;
+    }
+    public void showCar() {
+        display();
+        System.out.println("Car with " + seats + " seats.");
+    }
+}
+
+class Bike extends Vehicle {
+    String type;
+    public Bike(String brand, String type) {
+        super(brand);
+        this.type = type;
+    }
+    public void showBike() {
+        display();
+        System.out.println("Bike type: " + type);
+    }
+}
+
+public class VehicleTest {
+    public static void main(String[] args) {
+        Car c = new Car("Toyota", 4);
+        Bike b = new Bike("Yamaha", "Sports");
+
+        c.showCar();
+        b.showBike();
+    }
+}
